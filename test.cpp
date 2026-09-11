@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/**
+ * 
+ * KATTIS PROBLEM 
+ * Name: "Reduplication"
+ * Difficulty: (1.1 Easy)
+ * 
+ * 
+ */
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
