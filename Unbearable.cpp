@@ -15,38 +15,31 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    /*
-    enter number of items n
-    enter each animal name
-    program ends when 0 is entered
-    
-    Sample Input:
 
-    6
-African elephant
-White tiger
-Indian elephant
-Siberian tiger
-Tiger
-Panda bear
-1
-Blue Russian Penguin
-0
+    int n;
+    int listNum = 1;
+    while (true){
+        cin >> n;
+        if (n == 0){
+            break;
+        }
+        cin.ignore();
 
+        map<string,int> list;
+        string line;
 
-Sample output:
+        for (int i = 0; i < n; i++){
+            getline(cin,line);
+            string last = line.substr(line.find_last_of(' ') + 1);
+            for (char &ch : last) ch = tolower(ch);
+            list[last]++;
+        }
 
-List 1:
-bear | 1
-elephant | 2
-tiger | 3
-List 2:
-penguin | 1
-    */
-
-
-
-
-
+        cout << "List " << listNum << ":\n";
+        for (auto [key, val] : list){
+            cout << key << " | " << val << "\n";
+        }       
+        listNum++;
+    }
     return 0;
 }
